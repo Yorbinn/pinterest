@@ -2,6 +2,11 @@ class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except:[ :index, :show]
 
+
+
+  def mypins
+    @pins = current_user.pins
+  end
   # GET /pins
   # GET /pins.json
   def index
