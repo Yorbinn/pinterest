@@ -7,6 +7,8 @@ class PinsController < ApplicationController
     @user_id = params[:user_id]
     @user = User.find(@user_id)
     @pins = @user.pins
+
+    #<%= link_to 'Mas pins del mismo usuario', pinsof_path(@pin.user.id) %>
   end
 
 
