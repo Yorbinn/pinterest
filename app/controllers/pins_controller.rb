@@ -3,6 +3,12 @@ class PinsController < ApplicationController
   before_filter :authenticate_user!, except:[ :index, :show]
 
 
+  def pinsof
+    @user_id = params[:user_id]
+    @user = User.find(@user_id)
+    @pins = @user.pins
+  end
+
 
   def mypins
     @pins = current_user.pins
